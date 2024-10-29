@@ -1,0 +1,82 @@
+[
+  {
+    "_id": 1,
+    "title": "GTA V",
+    "description": "Experience the thrilling open-world action of GTA V in the vast city of Los Santos.",
+    "category": "Action",
+    "trending": true,
+    "coverImage": "gta-v-cover.png",
+    "oldPrice": 59.99,
+    "newPrice": 39.99
+  },
+  {
+    "_id": 2,
+    "title": "Assassin's Creed",
+    "description": "Embark on a Viking adventure in medieval England, forging alliances and battling enemies.",
+    "category": "Action",
+    "trending": true,
+    "coverImage": "ac-valhalla-cover.png",
+    "oldPrice": 59.99,
+    "newPrice": 39.99
+  },
+  {
+    "_id": 3,
+    "title": "The Legend of Zelda",
+    "description": "Explore a vast open world filled with mystery, puzzles, and adventure as you uncover the secrets of Hyrule.",
+    "category": "Adventure",
+    "trending": true,
+    "coverImage": "zelda-botw-cover.png",
+    "oldPrice": 59.99,
+    "newPrice": 49.99
+  },
+  {
+    "_id": 4,
+    "title": "Uncharted 4",
+    "description": "Join Nathan Drake in a global adventure filled with treasure hunting and epic battles.",
+    "category": "Adventure",
+    "trending": true,
+    "coverImage": "uncharted-4-cover.png",
+    "oldPrice": 49.99,
+    "newPrice": 34.99
+  },
+  {
+    "_id": 5,
+    "title": "Forza Horizon 5",
+    "description": "Experience high-speed racing across diverse landscapes in the ultimate open-world racing game.",
+    "category": "Sports & Racing",
+    "trending": true,
+    "coverImage": "forza-horizon-5-cover.png",
+    "oldPrice": 69.99,
+    "newPrice": 49.99
+  },
+  {
+    "_id": 6,
+    "title": "FIFA 24",
+    "description": "Step onto the pitch with FIFA 24, featuring realistic gameplay and immersive football action.",
+    "category": "Sports & Racing",
+    "trending": true,
+    "coverImage": "fifa-24-cover.png",
+    "oldPrice": 59.99,
+    "newPrice": 39.99
+  },
+  {
+    "_id": 7,
+    "title": "Civilization VI",
+    "description": "Build an empire that stands the test of time in this strategic civilization-building game.",
+    "category": "Strategy",
+    "trending": false,
+    "coverImage": "civ-vi-cover.png",
+    "oldPrice": 49.99,
+    "newPrice": 29.99
+  },
+  {
+    "_id": 8,
+    "title": "StarCraft II",
+    "description": "Command vast armies and develop unique strategies in the galaxy's most intense real-time strategy game.",
+    "category": "Strategy",
+    "trending": true,
+    "coverImage": "starcraft-ii-cover.png",
+    "oldPrice": 39.99,
+    "newPrice": 24.99
+  }
+]

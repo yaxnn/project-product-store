@@ -1,25 +1,38 @@
 import React, { useEffect, useState } from "react";
-import BookCard from "../book/BookCard";
+import GameCard from "../game/GameCard";
+
 
 const categories = [
-  "Choose a genre",
-  "Business",
-  "Fiction",
-  "Horror",
+  "choose a genre",
+  "Action",
   "Adventure",
+  "Sports & Racing",
+  "Strategy",
 ];
 const TopSellers = () => {
-  const [books, setBooks] = useState([]);
+  const [games, setGames] = useState([]);
   const [selectedCategory, setselectedCategory] = useState("choose a genre");
 
+  const fetchGames = async () =>{
+
+    try {
+
+      const response = await fetch("games.json")
+      const data = await response.json()
+      setGames(data)
+      
+    } catch (error) {
+
+      console.log("Err in settin games",error)
+      
+    }
+  }
+
   useEffect(() => {
-    fetch("books.json")
-      .then((res) => res.json())
-      .then((data) =>setBooks(data));
+    fetchGames();
   }, []);
 
-  const filterBooks = selectedCategory === "Choose a genre" ? books: books.filter(book => book.category === selectedCategory.toLowerCase())
-  console.log(filterBooks)
+  const filterGames = selectedCategory === "choose a genre" ? games: games.filter(game => game.category === selectedCategory)
   return (
     <div className="py-10">
       <h2 className="text-3xl font-semibold mb-6">Top Seller</h2>
@@ -37,8 +50,8 @@ const TopSellers = () => {
       </div>
 
       {
-            filterBooks.map((book, index) => (
-                    <BookCard key={index} book={book}/>
+            filterGames.map((game, index) => (
+                    <GameCard key={index} game={game}/>
             ))
       }
     </div>

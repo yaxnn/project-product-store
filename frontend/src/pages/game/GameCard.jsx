@@ -1,26 +1,27 @@
 import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
-const BookCard = () => {
+import { getImgUrl } from "../../utils/getImgurl";
+const GameCard = ({game}) => {
   return (
     <div className=" rounded-lg transition-shadow duration-300">
       <div className="flex flex-col sm:flex-row sm:items-center sm:h-72  sm:justify-center gap-4">
-        <div className="sm:h-72 sm:flex-shrink-0 border rounded-md">
+      <div className="sm:h-72 sm:flex-shrink-0 border rounded-md">
           <a href="/">
             <img
-              src="assets/books/book-1.png"
+              src={`${getImgUrl(game.coverImage)}`}
               alt=""
-              className="w-full bg-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200"
+              className="w-full h-full object-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200"
             />
           </a>
         </div>
 
         <div>
           <a href="/">
-            <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">
-              Book Title
+          <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">
+              {game.title}
             </h3>
           </a>
-          <p className="text-gray-600 mb-5">Book Description</p>
+          <p className="text-gray-600 mb-5">Game Description</p>
           <p className="font-medium mb-5">
             $80 <span className="line-through font-normal ml-2">$100</span>
           </p>
@@ -34,4 +35,4 @@ const BookCard = () => {
   );
 };
 
-export default BookCard;
+export default GameCard;
