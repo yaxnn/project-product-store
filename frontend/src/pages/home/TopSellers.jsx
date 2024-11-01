@@ -85,10 +85,11 @@ const TopSellers = () => {
         className="mySwiper"
         
       >
+
         {
           filterGames.length > 0 && filterGames.map((game, index) => (
             <SwiperSlide key={index}>
-              <GameCard game={game} />
+              <GameCard key={index} game={game} />
             </SwiperSlide>
           ))
         }
