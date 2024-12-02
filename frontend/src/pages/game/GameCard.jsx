@@ -19,7 +19,7 @@ const GameCard = ({ game }) => {
         </div>
 
         <div className="text-center sm:text-left w-full">
-          <Link to={`/games/${game._id}`}>
+          <Link target="_blank" to={game.link}>
             <h3 className="text-xl font-semibold text-gray-800 hover:text-blue-600 mb-2">
               {game.title}
             </h3>
