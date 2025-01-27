@@ -45,4 +45,4 @@ const gameSchema = new mongoose.Schema({
 
   const Game = mongoose.model('Game', gameSchema);
 
-  module.exports = Book;
+  module.exports = Game;
