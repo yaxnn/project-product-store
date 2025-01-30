@@ -41,6 +41,38 @@ const getSingleGame = async (req,res) =>{
     }
 }
 
+// update Game data
+
+const UpdateGame = async(req,res) => {
+    try {
+        const {id} = req.params;
+        const updatedGame = await Game.findByIdAndUpdate(id, req.body, {new:true});
+        if (!updatedGame) {
+            res.status(404).send({message: "Game Is Not Found!"})
+        }
+        res.status(200).send({
+            message: "Book Updated Successfully",
+            book: updatedGame
+        })
+    } catch (error) {
+        console.error("Error Updating Game",error);
+        res.status(500).send({message: "Failed To Update Game"})
+    }
+}
+
+
+// delete a book
+
+const deleteAGame = async(req,res) => {
+
+    try {
+        const {id} = req.params;
+    } catch (error) {
+        console.error("Error Deleting a Game",error);
+        res.status(500).send({message: "Failed To Delete A Game"})
+    }
+}
+
 
 
 
@@ -51,5 +83,7 @@ const getSingleGame = async (req,res) =>{
 module.exports = {
     postAGame,
     getAllGames,
-    getSingleGame
+    getSingleGame,
+    UpdateGame,
+    deleteAGame
 }
