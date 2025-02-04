@@ -51,8 +51,8 @@ const UpdateGame = async(req,res) => {
             res.status(404).send({message: "Game Is Not Found!"})
         }
         res.status(200).send({
-            message: "Book Updated Successfully",
-            book: updatedGame
+            message: "Game Updated Successfully",
+            game: updatedGame
         })
     } catch (error) {
         console.error("Error Updating Game",error);
@@ -61,12 +61,20 @@ const UpdateGame = async(req,res) => {
 }
 
 
-// delete a book
+// delete a game
 
 const deleteAGame = async(req,res) => {
 
     try {
         const {id} = req.params;
+        const deletedGame = await Game.findByIdAndDelete(id)
+        if (!deletedGame) {
+            res.status(404).send({message: "Game Is Not Found!"})
+        }
+        res.status(200).send({
+            message: "Game Deleted Successfully",
+            game: deletedGame
+        })
     } catch (error) {
         console.error("Error Deleting a Game",error);
         res.status(500).send({message: "Failed To Delete A Game"})

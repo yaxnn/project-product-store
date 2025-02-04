@@ -16,7 +16,7 @@ router.get("/:id",getSingleGame )
 router.put("/edit/:id", UpdateGame)
 
 // delete a game
-router.put("/:id", deleteAGame)
+router.delete("/:id", deleteAGame)
 
 
 
