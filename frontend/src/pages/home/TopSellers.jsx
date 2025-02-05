@@ -10,6 +10,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
+import { useFetchAllGamesQuery } from "../../redux/features/games/gamesApi";
 
 const categories = [
   "choose a genre",
@@ -19,22 +20,13 @@ const categories = [
   "Strategy",
 ];
 const TopSellers = () => {
-  const [games, setGames] = useState([]);
   const [selectedCategory, setselectedCategory] = useState("choose a genre");
 
-  const fetchGames = async () => {
-    try {
-      const response = await fetch("games.json");
-      const data = await response.json();
-      setGames(data);
-    } catch (error) {
-      console.log("Err in settin games", error);
-    }
-  };
 
-  useEffect(() => {
-    fetchGames();
-  }, []);
+
+  const {data: games = []} = useFetchAllGamesQuery()
+
+  
 
   const filterGames =
     selectedCategory === "choose a genre"

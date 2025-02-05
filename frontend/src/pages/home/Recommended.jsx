@@ -9,23 +9,15 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
+import { useFetchAllGamesQuery } from "../../redux/features/games/gamesApi";
 
 const Recommended = () => {
-  const [games, setGames] = useState([]);
+  
+const {data: games = []} = useFetchAllGamesQuery();
 
-  const fetchGames = async () => {
-    try {
-      const response = await fetch("games.json");
-      const data = await response.json();
-      setGames(data);
-    } catch (error) {
-      console.log("Err in settin games", error);
-    }
-  };
 
-  useEffect(() => {
-    fetchGames();
-  }, []);
+
+
   return <div className="py-16">
     <h2 className="text-3xl font-semibold mb-6">Recommended for you</h2>
     <Swiper
