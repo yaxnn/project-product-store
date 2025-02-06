@@ -22,11 +22,40 @@ const gamesApi = createApi({
         fetchAllGames: builder.query({
             query: () => "/",
             providesTags: ["Games"]
-        })
+        }),
+        fetchGameById: builder.query({
+            query: (id) => `/${id}`,
+            providesTags: (results,error, id) => [{type: "Games", id}],
+        }),
+        addBook: builder.mutation({
+            query: (newGame) => ({
+                url: `/create-game`,
+                method: "POST",
+                body: newGame
+            }),
+            invalidatesTags: ["Games"]
+        }),
+        updateGame: builder.mutation({
+            uery: ({id, ...rest}) => ({
+                url: `/edit/${id}`,
+                method: "PUT",
+                body: rest,
+                Headers: {
+                    'Content-Type': 'application/json'
+                }
+        }),
+        invalidatesTags: ["Games"]
+    }),
+    deleteGame: builder.mutation({
+        query: (id) => ({
+            url: `/${id}`,
+            method: "DELETE"
+        }),
+        invalidatesTags: ["Games"]
     })
-     
+})  
 })
 
 
-export const {useFetchAllGamesQuery} = gamesApi;
+export const {useFetchAllGamesQuery,useFetchGameByIdQuery,useAddBookMutation, useUpdateGameMutation,useDeleteGameMutation} = gamesApi;
 export default gamesApi;
