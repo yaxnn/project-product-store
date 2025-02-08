@@ -5,6 +5,7 @@ import Login from "../components/Login.jsx"
 import Register from "../components/Register.jsx";
 import CartPage from "../pages/game/cartPage.jsx";
 import CheckoutPage from "../pages/game/CheckoutPage.jsx";
+import SingleGame from "../pages/game/SingleGame.jsx";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         {
             path: "/checkout",
           element: <CheckoutPage/>
+        },
+        {
+            path: "/games/:id",
+          element: <SingleGame/>
         },
     ]
   },
