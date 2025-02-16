@@ -14,7 +14,7 @@ export const AuthProvider = ({Children}) => {
 
     // register a user
     const registerUser = async () => {
-
+        return createUserWithEmailAndPassword(AuthContext,email,password)
     }
 
     const value = {
@@ -27,4 +27,3 @@ export const AuthProvider = ({Children}) => {
     )
 }
 
-const non
