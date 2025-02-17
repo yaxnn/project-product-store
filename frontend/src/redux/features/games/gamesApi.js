@@ -27,7 +27,7 @@ const gamesApi = createApi({
             query: (id) => `/${id}`,
             providesTags: (results,error, id) => [{type: "Games", id}],
         }),
-        addBook: builder.mutation({
+        addGame: builder.mutation({
             query: (newGame) => ({
                 url: `/create-game`,
                 method: "POST",
@@ -57,5 +57,5 @@ const gamesApi = createApi({
 })
 
 
-export const {useFetchAllGamesQuery,useFetchGameByIdQuery,useAddBookMutation, useUpdateGameMutation,useDeleteGameMutation} = gamesApi;
+export const {useFetchAllGamesQuery,useFetchGameByIdQuery,useAddGameMutation, useUpdateGameMutation,useDeleteGameMutation} = gamesApi;
 export default gamesApi;
