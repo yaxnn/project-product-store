@@ -1,17 +1,24 @@
 import React, { useState } from "react";
-import {useSelector} from 'react-redux'
+import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 const CheckoutPage = () => {
-    const cartItems = useSelector(state => state.cart.cartItems);
-    const totalPrice =  cartItems.reduce((acc, item) => acc + item.newPrice, 0).toFixed(2);
-    const currentUser = true //TODO: Use get user from auth
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalPrice = cartItems
+    .reduce((acc, item) => acc + item.newPrice, 0)
+    .toFixed(2);
+  const {currentUser} = useAuth()
 
-
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const [isChecked, setisChecked] = useState(false)
-    const onSubmit = data => console.log(data);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const [isChecked, setisChecked] = useState(false);
+  const onSubmit = (data) => console.log(data);
 
   return (
     <section>
@@ -23,7 +30,9 @@ const CheckoutPage = () => {
                 Cash On Delevary
               </h2>
               <p className="text-gray-500 mb-2">Total Price: ${totalPrice}</p>
-              <p className="text-gray-500 mb-6">Items: {cartItems.length > 0 ? cartItems.length : 0}</p>
+              <p className="text-gray-500 mb-6">
+                Items: {cartItems.length > 0 ? cartItems.length : 0}
+              </p>
             </div>
 
             <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">

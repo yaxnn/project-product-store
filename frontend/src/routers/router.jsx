@@ -6,6 +6,7 @@ import Register from "../components/Register.jsx";
 import CartPage from "../pages/game/cartPage.jsx";
 import CheckoutPage from "../pages/game/CheckoutPage.jsx";
 import SingleGame from "../pages/game/SingleGame.jsx";
+import PrivateRoute from "./PrivateRoute.jsx";
 
 
 const router = createBrowserRouter([
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
         },
         {
             path: "/checkout",
-          element: <CheckoutPage/>
+          element: <PrivateRoute><CheckoutPage/></PrivateRoute>
         },
         {
             path: "/games/:id",
