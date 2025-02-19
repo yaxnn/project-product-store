@@ -20,9 +20,10 @@ app.use(cors({
 
 // routes
 const gameRoutes = require('./src/games/game.route');
-const { createAOrder } = require('./src/orders/order.controller');
+const orderRoutes = require('./src/orders/order.route')
+
 app.use("/api/games", gameRoutes)
-app.use("/api/orders", createAOrder)
+app.use("/api/orders", orderRoutes)
 
 
 
