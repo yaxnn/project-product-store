@@ -289,5 +289,3 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
-
-const jj
