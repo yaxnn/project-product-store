@@ -33,12 +33,12 @@ const OrderPage = () => {
                 {order.address.city}, {order.address.state},{" "}
                 {order.address.country}, {order.address.zipcode}
               </p>
-              <h3 className="font-semibold mt-2">Products Id:</h3>
-              <ul>
+              {/* <h3 className="font-semibold mt-2">Products Id:</h3> */}
+              {/* <ul>
                 {order.productIds.map((productId) => (
                   <li key={productId}>{productId}</li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
           ))}
         </div>

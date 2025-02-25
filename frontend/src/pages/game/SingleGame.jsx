@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import { getImgUrl } from '../../utils/getImgUrl';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/features/cart/cartSlice';
+import {useFetchGameByIdQuery} from '../../redux/features/games/gamesApi.js'
 
 
 
@@ -11,7 +12,8 @@ import { addToCart } from '../../redux/features/cart/cartSlice';
 const SingleGame = () => {
     const {id} = useParams();
     const {data: game, isLoading, isError} = useFetchGameByIdQuery(id);
-
+    console.log(game);
+    
     const dispatch =  useDispatch();
 
     const handleAddToCart = (product) => {
