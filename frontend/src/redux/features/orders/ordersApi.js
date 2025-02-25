@@ -22,6 +22,7 @@ const ordersApi = createApi({
             query: (email) => ({
                 url: `/email/${email}`
             }),
+
             providesTags: ['Orders']
         })
     })

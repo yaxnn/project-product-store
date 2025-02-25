@@ -7,6 +7,8 @@ import CartPage from "../pages/game/cartPage.jsx";
 import CheckoutPage from "../pages/game/CheckoutPage.jsx";
 import SingleGame from "../pages/game/SingleGame.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
+import OrderPage from "../pages/game/orderPage.jsx";
+
 
 
 const router = createBrowserRouter([
@@ -20,7 +22,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/orders",
-            element:<div>orders</div>
+            element:<PrivateRoute><OrderPage/></PrivateRoute>
         },
         {
             path:"/about",
