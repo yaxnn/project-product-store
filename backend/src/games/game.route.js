@@ -2,9 +2,10 @@ const express = require('express')
 const router = express.Router();
 const Game = require('./game.model')
 const {postAGame, getAllGames, getSingleGame, UpdateGame, deleteAGame} = require('./game.controller');
+const verifyAdminToken = require('../middleware/verifyAdminToken');
 
 // post a game 
-router.post("/create-game", postAGame)
+router.post("/create-game",verifyAdminToken, postAGame)
 
 // get game
 router.get("/",getAllGames )

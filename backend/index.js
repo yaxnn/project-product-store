@@ -22,11 +22,12 @@ app.use(cors({
 const gameRoutes = require('./src/games/game.route');
 const orderRoutes = require('./src/orders/order.route')
 const userRoutes =  require("./src/users/user.route")
-
+const adminRoutes = require("./src/stats/admin.stats")
 
 app.use("/api/games", gameRoutes)
 app.use("/api/orders", orderRoutes)
 app.use("/api/auth", userRoutes)
+app.use("/api/admin", adminRoutes)
 
 
 async function main() {

@@ -8,8 +8,9 @@ import CheckoutPage from "../pages/game/CheckoutPage.jsx";
 import SingleGame from "../pages/game/SingleGame.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 import OrderPage from "../pages/game/orderPage.jsx";
-
-
+import AdminRoute from "./AdminRoute.jsx";
+import AdminLogin from "../components/AdminLogin.jsx";
+import DashboardLayout from "../pages/dashboard/DashBoardLayout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,40 @@ const router = createBrowserRouter([
         },
     ]
   },
+  {
+    path: "/admin",
+    element: <AdminLogin/>
+  },
+  {
+    path: "/dashboard",
+    element: <AdminRoute>
+      <DashboardLayout/>
+    </AdminRoute>,
+    children:[
+      {
+        path: "",
+        element: <AdminRoute><Dashboard/></AdminRoute>
+      },
+      {
+        path: "add-new-game",
+        element: <AdminRoute>
+          <AddGame/>
+        </AdminRoute>
+      },
+      {
+        path: "edit-game/:id",
+        element: <AdminRoute>
+          <UpdateGame/>
+        </AdminRoute>
+      },
+      {
+        path: "manage-games",
+        element: <AdminRoute>
+          <ManageGames/>
+        </AdminRoute>
+      }
+    ]
+  }
 ]);
 
 export default router;
