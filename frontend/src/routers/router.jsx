@@ -11,6 +11,11 @@ import OrderPage from "../pages/game/orderPage.jsx";
 import AdminRoute from "./AdminRoute.jsx";
 import AdminLogin from "../components/AdminLogin.jsx";
 import DashboardLayout from "../pages/dashboard/DashBoardLayout.jsx";
+import ManageGames from "../pages/dashboard/manageGames/ManageGames.jsx";
+import UpdateGame from "../pages/dashboard/EditGame/UpdateGame.jsx";
+import AddGame from "../pages/dashboard/addGame/AddGame.jsx";
+import Dashboard from "../pages/dashboard/Dashboard.jsx";
+import UserDashboard from "../pages/dashboard/users/UserDashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +54,10 @@ const router = createBrowserRouter([
             path: "/games/:id",
           element: <SingleGame/>
         },
+        {
+          path: "/user-dashboard",
+          element: <PrivateRoute><UserDashboard/></PrivateRoute>
+        }
     ]
   },
   {

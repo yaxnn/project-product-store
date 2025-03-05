@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
             }
         ]);
 
-        // 4. Trending books statistics: 
+        // 4. Trending games statistics: 
         const trendingGamesCount = await Game.aggregate([
             { $match: { trending: true } },  // Match only trending games
             { $count: "trendingGamesCount" }  // Return the count of trending games

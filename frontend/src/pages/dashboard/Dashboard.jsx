@@ -56,7 +56,7 @@ const Dashboard = () => {
             </svg>
           </div>
           <div>
-            <span className="block text-2xl font-bold">{data?.totalBooks}</span>
+            <span className="block text-2xl font-bold">{data?.totalGames}</span>
             <span className="block text-gray-500">Products</span>
           </div>
         </div>
@@ -103,13 +103,13 @@ const Dashboard = () => {
           </div>
           <div>
             <span className="inline-block text-2xl font-bold">
-              {data?.trendingBooks}
+              {data?.trendingGames}
             </span>
             <span className="inline-block text-xl text-gray-500 font-semibold">
               (13%)
             </span>
             <span className="block text-gray-500">
-              Trending Books in This Month
+              Trending Games in This Month
             </span>
           </div>
         </div>

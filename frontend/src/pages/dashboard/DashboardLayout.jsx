@@ -65,14 +65,14 @@ const DashboardLayout = () => {
               </svg>
             </Link>
             <Link
-              to="/dashboard/add-new-book"
+              to="/dashboard/add-new-game"
               className="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-700 focus:text-gray-400 focus:bg-gray-700 rounded-lg"
             >
-              <span className="sr-only">Add Book</span>
+              <span className="sr-only">Add Game</span>
               <HiViewGridAdd className="h-6 w-6" />
             </Link>
             <Link
-              to="/dashboard/manage-books"
+              to="/dashboard/manage-games"
               className="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-700 focus:text-gray-400 focus:bg-gray-700 rounded-lg"
             >
               <span className="sr-only">Documents</span>
@@ -219,11 +219,11 @@ const DashboardLayout = () => {
           <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
             <div className="mr-6">
               <h1 className="text-4xl font-semibold mb-2">Dashboard</h1>
-              <h2 className="text-gray-600 ml-0.5">Book Store Inventory</h2>
+              <h2 className="text-gray-600 ml-0.5">Game Store Inventory</h2>
             </div>
             <div className="flex flex-col md:flex-row items-start justify-end -mb-3">
               <Link
-                to="/dashboard/manage-books"
+                to="/dashboard/manage-games"
                 className="inline-flex px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md mb-3"
               >
                 <svg
@@ -240,10 +240,10 @@ const DashboardLayout = () => {
                     d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
                   />
                 </svg>
-                Manage Books
+                Manage Games
               </Link>
               <Link
-                to="/dashboard/add-new-book"
+                to="/dashboard/add-new-game"
                 className="inline-flex px-5 py-3 text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md ml-6 mb-3"
               >
                 <svg
@@ -260,7 +260,7 @@ const DashboardLayout = () => {
                     d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                   />
                 </svg>
-                Add New Book
+                Add New Game
               </Link>
             </div>
           </div>
