@@ -3,7 +3,7 @@ import App from "../App.jsx";
 import Home from "../pages/home/Home.jsx";
 import Login from "../components/Login.jsx"
 import Register from "../components/Register.jsx";
-import CartPage from "../pages/game/cartPage.jsx";
+import CartPage from "../pages/game/CartPage.jsx";
 import CheckoutPage from "../pages/game/CheckoutPage.jsx";
 import SingleGame from "../pages/game/SingleGame.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
