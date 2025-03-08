@@ -90,12 +90,12 @@ const UpdateGame = () => {
           label="Category"
           name="category"
           options={[
-            { value: "", label: "Choose A Category" },
-            { value: "business", label: "Business" },
-            { value: "technology", label: "Technology" },
-            { value: "fiction", label: "Fiction" },
-            { value: "horror", label: "Horror" },
-            { value: "adventure", label: "Adventure" },
+            { value: '', label: 'Choose A Category' },
+            { value: 'Action', label: 'Action' },
+            { value: 'Adventure', label: 'Adventure' },
+            { value: 'Sports & Racing', label: 'Sports & Racing' },
+            { value: 'horror', label: 'Horror' },
+            { value: 'Strategy', label: 'Strategy' },
           ]}
           register={register}
         />

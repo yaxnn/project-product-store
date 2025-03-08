@@ -74,11 +74,11 @@ const AddGame = () => {
           name="category"
           options={[
             { value: '', label: 'Choose A Category' },
-            { value: 'business', label: 'Business' },
-            { value: 'technology', label: 'Technology' },
-            { value: 'fiction', label: 'Fiction' },
+            { value: 'Action', label: 'Action' },
+            { value: 'Adventure', label: 'Adventure' },
+            { value: 'Sports & Racing', label: 'Sports & Racing' },
             { value: 'horror', label: 'Horror' },
-            { value: 'adventure', label: 'Adventure' },
+            { value: 'Strategy', label: 'Strategy' },
             // Add more options as needed
           ]}
           register={register}
