@@ -1,5 +1,5 @@
 const getBaseUrl = () => {
-    return "http://localhost:5000"
+    return "https://project-product-store-umsq.vercel.app"
 }
 
 export default getBaseUrl;
