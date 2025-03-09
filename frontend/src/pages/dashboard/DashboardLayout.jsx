@@ -6,7 +6,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { HiViewGridAdd } from "react-icons/hi";
 import { MdOutlineManageHistory } from "react-icons/md";
 
-const DashboardLayout = () => {
+const DashBoardLayout = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -271,4 +271,4 @@ const DashboardLayout = () => {
   );
 };
 
-export default DashboardLayout;
+export default DashBoardLayout;

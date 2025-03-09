@@ -7,10 +7,10 @@ import CartPage from "../pages/game/CartPage.jsx";
 import CheckoutPage from "../pages/game/CheckoutPage.jsx";
 import SingleGame from "../pages/game/SingleGame.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
-import OrderPage from "../pages/game/orderPage.jsx";
+import OrderPage from "../pages/game/OrderPage.jsx";
 import AdminRoute from "./AdminRoute.jsx";
 import AdminLogin from "../components/AdminLogin.jsx";
-import DashboardLayout from "../pages/dashboard/DashBoardLayout.jsx";
+import DashBoardLayout from "../pages/dashboard/DashBoardLayout.jsx";
 import ManageGames from "../pages/dashboard/manageGames/ManageGames.jsx";
 import UpdateGame from "../pages/dashboard/EditGame/UpdateGame.jsx";
 import AddGame from "../pages/dashboard/addGame/AddGame.jsx";
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <AdminRoute>
-      <DashboardLayout/>
+      <DashBoardLayout/>
     </AdminRoute>,
     children:[
       {
