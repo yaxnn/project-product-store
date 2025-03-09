@@ -1,8 +1,8 @@
 import React from 'react'
-import Banner from './Banner'
-import TopSellers from './TopSellers'
-import Recommended from './Recommended'
-import News from './News'
+import Banner from './Banner.jsx'
+import TopSellers from './TopSellers.jsx'
+import Recommended from './Recommended.jsx'
+import News from './News.jsx'
 
 
 const Home = () => {
