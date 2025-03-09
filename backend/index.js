@@ -13,7 +13,7 @@ require('dotenv').config()
 
 app.use(express.json());
 app.use(cors({
-  origin:['http://localhost:5173'],
+  origin:['http://localhost:5173',"https://gamevault-frontend-ten.vercel.app"],
   credentials:true
 }))
 
