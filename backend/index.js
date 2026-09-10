@@ -30,21 +30,24 @@ app.use("/api/auth", userRoutes)
 app.use("/api/admin", adminRoutes)
 
 
+app.get('/', (req, res) => {
+  res.send("Game Vault Server is running!");
+});
+
 async function main() {
   try {
-      
       await mongoose.connect(process.env.DB_URL);
       console.log("MongoDB connected successfully");
-      
-      
-      app.listen(port, () => {
-          console.log(`Server listening on port ${port}`)
-      });
   } catch (err) {
       console.error("Failed to connect to MongoDB:", err);
-      process.exit(1); 
   }
 }
 
-
 main();
+
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`)
+});
+
+module.exports = app;
+
