@@ -1,5 +1,6 @@
 import React from "react";
 import bannerImg from "../../assets/banner.png";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -20,7 +21,8 @@ const Banner = () => {
           turn-based and real-time combat, blending beautiful art with a rich
           storyline.
         </p>
-        <button className="btn-primary">Subscribe</button>
+        <Link to="/login"><button className="btn-primary">Subscribe</button></Link>
+        
       </div>
       
     </div>

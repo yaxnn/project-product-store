@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from "react-router-dom";
 
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"
 
@@ -29,9 +29,11 @@ const Footer = () => {
               placeholder="Enter your email"
               className="w-full px-4 py-2 rounded-l-md text-black"
             />
+            <Link to="/login">
             <button className="bg-primary px-6 py-2 rounded-r-md hover:bg-primary-dark">
               Subscribe
             </button>
+            </Link>
           </div>
         </div>
       </div>
