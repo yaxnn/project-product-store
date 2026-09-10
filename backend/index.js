@@ -18,7 +18,7 @@ app.use(cors({
 }))
 
 
-const dbUrl = process.env.DB_URL || "mongodb+srv://yaseenharish:d5lWl7NonN9Tzs0G@cluster0.uc0oo.mongodb.net/game-store?retryWrites=true&w=majority&appName=Cluster0";
+const dbUrl = process.env.DB_URL;
 
 let isConnected = false;
 async function connectDB() {
