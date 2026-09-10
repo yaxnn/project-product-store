@@ -27,23 +27,27 @@ const adminRoutes = require("./src/stats/admin.stats")
 app.use("/api/games", gameRoutes)
 app.use("/api/orders", orderRoutes)
 app.use("/api/auth", userRoutes)
-app.use("/api/admin", adminRoutes)
-
-
-app.get('/', (req, res) => {
-  res.send("Game Vault Server is running!");
-});
-
-async function main() {
+let isConnected = false;
+async function connectDB() {
+  if (isConnected) return;
   try {
       await mongoose.connect(process.env.DB_URL);
+      isConnected = true;
       console.log("MongoDB connected successfully");
   } catch (err) {
       console.error("Failed to connect to MongoDB:", err);
   }
 }
 
-main();
+app.use(async (req, res, next) => {
+    await connectDB();
+    next();
+});
+
+app.get('/', (req, res) => {
+  res.send("Game Vault Server is running!");
+});
+
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
