@@ -18,20 +18,13 @@ app.use(cors({
 }))
 
 
-// routes
-const gameRoutes = require('./src/games/game.route');
-const orderRoutes = require('./src/orders/order.route')
-const userRoutes =  require("./src/users/user.route")
-const adminRoutes = require("./src/stats/admin.stats")
+const dbUrl = process.env.DB_URL || "mongodb+srv://yaseenharish:d5lWl7NonN9Tzs0G@cluster0.uc0oo.mongodb.net/game-store?retryWrites=true&w=majority&appName=Cluster0";
 
-app.use("/api/games", gameRoutes)
-app.use("/api/orders", orderRoutes)
-app.use("/api/auth", userRoutes)
 let isConnected = false;
 async function connectDB() {
-  if (isConnected) return;
+  if (isConnected && mongoose.connection.readyState === 1) return;
   try {
-      await mongoose.connect(process.env.DB_URL);
+      await mongoose.connect(dbUrl);
       isConnected = true;
       console.log("MongoDB connected successfully");
   } catch (err) {
@@ -43,6 +36,17 @@ app.use(async (req, res, next) => {
     await connectDB();
     next();
 });
+
+// routes
+const gameRoutes = require('./src/games/game.route');
+const orderRoutes = require('./src/orders/order.route')
+const userRoutes =  require("./src/users/user.route")
+const adminRoutes = require("./src/stats/admin.stats")
+
+app.use("/api/games", gameRoutes)
+app.use("/api/orders", orderRoutes)
+app.use("/api/auth", userRoutes)
+app.use("/api/admin", adminRoutes)
 
 app.get('/', (req, res) => {
   res.send("Game Vault Server is running!");

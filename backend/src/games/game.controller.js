@@ -20,7 +20,7 @@ const getAllGames = async (req,res) => {
 
     } catch (error) {
         console.error("Error Fetching Games",error);
-        res.status(400).send({message: "Failed To Fetch Games"})
+        res.status(400).send({message: "Failed To Fetch Games", error: error.message})
     }
 
 }
